@@ -21,5 +21,6 @@ steps:
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
     solution: '**/*.sln'
-    msbuildArchitecture: 'x64'
     configuration: $(buildConfiguration)
+    restoreNugetPackages: true
+    logProjectEvents: true
