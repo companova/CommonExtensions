@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- See this link https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting-->
+    <TargetFrameworks>netstandard2.0;net461;net45</TargetFrameworks>
+    <AssemblyName>Companova.Common.Extensions</AssemblyName>
+    <RootNamespace>Companova.Common.Extensions</RootNamespace>
+    <Authors>Dima Maltsev</Authors>
+    <Owners>Dima Maltsev</Owners>
+    <Company>CompaNova LLC</Company>
+    <Description>A collection of simple but useful extensions to .NET basic objects</Description>
+    <Copyright>Copyright 2020</Copyright>
+    <!--<PackageLicenseUrl>https://github.com/companova/CommonExtensions/blob/master/LICENSE</PackageLicenseUrl>-->
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/companova/CommonExtensions/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/companova/CommonExtensions/</RepositoryUrl>
+    <PackageTags>windows, netstandard, extensions</PackageTags>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>0.0.1-preview.5</Version>
+    <PackageVersion>0.0.1-preview.5</PackageVersion>
+    <PackOnBuild>true</PackOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)'=='Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  
+</Project>
