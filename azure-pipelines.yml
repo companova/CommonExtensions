@@ -27,6 +27,14 @@ steps:
     configuration: $(buildConfiguration)
     logProjectEvents: true
 
+
+# Run Unit Tests
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+
 # Copy all the nupkg files created to the artifact directory
 - task: CopyFiles@2
   displayName: 'Copy nupkg to StagingDirectory - $(Build.ArtifactStagingDirectory)'
