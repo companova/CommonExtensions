@@ -1,3 +1,9 @@
+### Build Status:
+
+master | dev
+------------ | -------------
+[![Build Status](https://dev.azure.com/cn-github-builds/GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=master)](https://dev.azure.com/cn-github-builds/GitHub%20Builds/_build/latest?definitionId=1&branchName=master)|[![Build Status](https://dev.azure.com/cn-github-builds/GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=dev)](https://dev.azure.com/cn-github-builds/GitHub%20Builds/_build/latest?definitionId=1&branchName=dev)
+
 # .NET Common Extensions
 A collection of simple but useful extensions to .NET basic objects
 
