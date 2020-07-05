@@ -1,6 +1,11 @@
-# Build Status:
-## master [![Build Status](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=master)](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_build/latest?definitionId=2&branchName=master)
-## dev [![Build Status](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=dev)](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_build/latest?definitionId=2&branchName=dev)
+### Build Status:
+#### master
+[![Build Status](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=master)](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_build/latest?definitionId=2&branchName=master)
+
+#### dev
+[![Build Status](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=dev)](https://labdotnet.visualstudio.com/Companova%20GitHub%20Builds/_build/latest?definitionId=2&branchName=dev)
+
+[![Build Status](https://dev.azure.com/cn-github-builds/GitHub%20Builds/_apis/build/status/companova.CommonExtensions?branchName=dev)](https://dev.azure.com/cn-github-builds/GitHub%20Builds/_build/latest?definitionId=1&branchName=dev)
 
 # .NET Common Extensions
 A collection of simple but useful extensions to .NET basic objects
