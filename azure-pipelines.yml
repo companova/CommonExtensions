@@ -14,20 +14,22 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: echo Start Building Common Extensions!
-  displayName: 'Start'
-
 - task: NuGetCommand@2
   displayName: 'Restore Nuget Packages'
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
 
 - task: MSBuild@1
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
     solution: '**/*.sln'
     configuration: $(buildConfiguration)
-    restoreNugetPackages: true
     logProjectEvents: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+   
