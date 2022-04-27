@@ -11,22 +11,47 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  nuGetToolVersion: '6.1.0'
 
 steps:
+## Add this Command to Include the .NET 6 SDK
+#- task: UseDotNet@2
+#  displayName: Use .NET 6.0
+#  inputs:
+#    packageType: 'sdk'
+#    version: '6.0.x'
+
+# Important! By default Azure pipelines run old version of Nuget Tool (4.1.0) https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/nuget?view=azure-devops
+# Get the latest Nuget Tool: https://dist.nuget.org/tools.json
+# It fixes this issue: https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1005
+- task: NuGetToolInstaller@1
+  displayName: 'Install Nuget - $(nuGetToolVersion)'
+  inputs:
+    versionSpec: '$(nuGetToolVersion)'
+
 - task: NuGetCommand@2
   displayName: 'Restore Nuget Packages'
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
 
-- task: MSBuild@1
+#- task: MSBuild@1
+#  displayName: 'Build the project - $(buildConfiguration)'
+#  inputs:
+#    solution: '**/*.sln'
+#    configuration: $(buildConfiguration)
+#    logProjectEvents: true
+
+- task: VSBuild@1
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
-    solution: '**/*.sln'
-    configuration: $(buildConfiguration)
-    logProjectEvents: true
-
+    solution: '$(solution)'
+    msbuildArgs: '/nodeReuse:false'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 # Run Unit Tests
 - task: DotNetCoreCLI@2

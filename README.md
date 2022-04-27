@@ -7,6 +7,13 @@ master | dev
 # .NET Common Extensions
 A collection of simple but useful extensions to .NET basic objects
 
+### Setup:
+<a href="https://www.nuget.org/packages/Companova.Common.Extensions/">
+  <img alt="Nuget" src="https://img.shields.io/nuget/v/Companova.Common.Extensions">
+</a>
+
+**Available on NuGet:** [Companova.Common.Extensions](https://www.nuget.org/packages/Companova.Common.Extensions/)
+
 # Example:
 ```csharp
 IsNullOrEmpty();
