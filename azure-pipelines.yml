@@ -11,6 +11,8 @@ pool:
   vmImage: 'windows-2022'
 
 variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
@@ -27,13 +29,19 @@ steps:
     command: 'restore'
     restoreSolution: '**/*.sln'
 
-- task: MSBuild@1
+#- task: MSBuild@1
+#  displayName: 'Build the project - $(buildConfiguration)'
+#  inputs:
+#    solution: '**/*.sln'
+#    configuration: $(buildConfiguration)
+#    logProjectEvents: true
+
+- task: VSBuild@1
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
-    solution: '**/*.sln'
-    configuration: $(buildConfiguration)
-    logProjectEvents: true
-
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 # Run Unit Tests
 - task: DotNetCoreCLI@2
