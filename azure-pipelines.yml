@@ -40,6 +40,7 @@ steps:
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
     solution: '$(solution)'
+    msbuildArgs: '/nodeReuse:false'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
