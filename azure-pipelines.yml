@@ -8,7 +8,7 @@ trigger:
 # - master
 
 pool:
-  vmImage: 'windows-2022'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -17,17 +17,18 @@ variables:
   nuGetToolVersion: '6.1.0'
 
 steps:
-# Add this Command to Include the .NET 6 SDK
-- task: UseDotNet@2
-  displayName: Use .NET 6.0
-  inputs:
-    packageType: 'sdk'
-    version: '6.0.x'
+## Add this Command to Include the .NET 6 SDK
+#- task: UseDotNet@2
+#  displayName: Use .NET 6.0
+#  inputs:
+#    packageType: 'sdk'
+#    version: '6.0.x'
 
-# Get latest Nuget Tool: https://dist.nuget.org/tools.json
-# This fixes https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1005
+# Important! By default Azure pipelines run old version of Nuget Tool (4.1.0) https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/package/nuget?view=azure-devops
+# Get the latest Nuget Tool: https://dist.nuget.org/tools.json
+# It fixes this issue: https://docs.microsoft.com/en-us/dotnet/core/tools/sdk-errors/netsdk1005
 - task: NuGetToolInstaller@1
-  displayName: 'Install latest Nuget Tool - $(nuGetToolVersion)'
+  displayName: 'Install Nuget - $(nuGetToolVersion)'
   inputs:
     versionSpec: '$(nuGetToolVersion)'
 
