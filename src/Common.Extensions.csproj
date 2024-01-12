@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <!-- See this link https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/cross-platform-targeting-->
@@ -8,18 +8,22 @@
     <Authors>Dima Maltsev</Authors>
     <Owners>Dima Maltsev</Owners>
     <Company>CompaNova LLC</Company>
+    <Title>Companova.Common.Extensions</Title>
+    <Summary>A collection of simple but useful extensions to .NET basic objects</Summary>
     <Description>A collection of simple, but useful extensions to .NET basic objects</Description>
-    <Copyright>Copyright 2020 - 2022</Copyright>
+    <Copyright>Copyright 2020 - 2024</Copyright>
     <!--<PackageLicenseUrl>https://github.com/companova/CommonExtensions/blob/master/LICENSE</PackageLicenseUrl>-->
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>A collection of simple but useful extensions to .NET basic objects</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/companova/CommonExtensions/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/companova/CommonExtensions/</RepositoryUrl>
     <PackageTags>windows, netstandard, net6.0, extensions, Companova.Common.Extensions</PackageTags>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
-    <Version>1.0.0</Version>
-    <PackageVersion>1.0.0</PackageVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.1.0</AssemblyFileVersion>
+    <Version>1.0.1</Version>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
 
@@ -38,6 +42,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
   
 </Project>
