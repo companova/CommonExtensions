@@ -34,3 +34,21 @@ void foo(List<T> listOfTs)
     // There is some data in the List. Continue on
 }
 ```
+
+# Example:
+```csharp
+Shuffle();
+```
+
+Randomly Shuffles an Array:
+```csharp
+{
+    int[] arr = new int[100];
+    for(int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = i;
+    }
+
+    arr.Shuffle();
+}
+```
