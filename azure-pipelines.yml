@@ -7,8 +7,9 @@ trigger:
 - '*'
 # - master
 
+# windows-latest does not support visual studio 2026 yet. Need to use windows-2025-vs2026 image to get the latest visual studio 2026 build tools.
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2025-vs2026'
 
 variables:
   solution: '**/*.sln'
